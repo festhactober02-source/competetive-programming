@@ -70,9 +70,6 @@ if __name__ == "__main__":
     print("Linked List:")
     ll.print_list()
 
-    print("Search 20:", ll.search(20))
-    print("Search 99:", ll.search(99))
-
 
 
 
