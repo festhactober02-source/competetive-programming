@@ -9,7 +9,10 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    # Insert at the end
+    # Insert at the end# Insert at the beginning
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
     def insert_at_end(self, data):
         new_node = Node(data)
         if self.head is None:
