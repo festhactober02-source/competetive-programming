@@ -1,7 +1,9 @@
 
 class LinkedList:
     def __init__(self):
-        self.head = None
+        self.head =         self.data = data   # store data
+        self.data = data   # store data
+
 
     # Insert at the beginning
     def insert_at_beginning(self, data):
