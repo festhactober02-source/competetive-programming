@@ -70,6 +70,16 @@ if __name__ == "__main__":
     print("Linked List:")
     ll.print_list()
 
+# Example usage
+if __name__ == "__main__":
+    ll = LinkedList()
+    ll.insert_at_end(10)
+    ll.insert_at_end(20)
+    ll.insert_at_beginning(5)
+    ll.insert_at_end(30)
+
+    print("Linked List:")
+    ll.print_list()
 
 
 
