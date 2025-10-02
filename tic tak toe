@@ -75,17 +75,7 @@ if __name__ == "__main__":
 
     ll.delete_node(20)
     print("After deleting 20:")
-    ll.print_list()
-Output:
-rust
-Copy code
-Linked List:
-5 -> 10 -> 20 -> 30 -> None
-Search 20: True
-Search 99: False
-After deleting 20:
-5 -> 10 -> 30 -> None
-Do you want me to also show you the C implementation of linked list, or do you prefer just Python?
+    ll.print_li
 
 
 
