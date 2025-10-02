@@ -1,0 +1,197 @@
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data   # store data
+        self.next = None   # pointer to next node
+
+
+# Linked List class
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Insert at the beginning
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    # Insert at the end
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    # Delete a node by value
+    def delete_node(self, key):
+        temp = self.head
+
+        # If head node holds the key
+        if temp and temp.data == key:
+            self.head = temp.next
+            temp = None
+            return
+
+        prev = None
+        while temp and temp.data != key:
+            prev = temp
+            temp = temp.next
+
+        if temp is None:  # Key not found
+            return
+
+        prev.next = temp.next
+        temp = None
+
+    # Search for a value
+    def search(self, key):
+        temp = self.head
+        while temp:
+            if temp.data == key:
+                return True
+            temp = temp.next
+        return False
+
+    # Print the linked list
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+
+# Example usage
+if __name__ == "__main__":
+    ll = LinkedList()
+    ll.insert_at_end(10)
+    ll.insert_at_end(20)
+    ll.insert_at_beginning(5)
+    ll.insert_at_end(30)
+
+    print("Linked List:")
+    ll.print_list()
+
+    print("Search 20:", ll.search(20))
+    print("Search 99:", ll.search(99))
+
+    ll.delete_node(20)
+    print("After deleting 20:")
+    ll.print_list()
+Output:
+rust
+Copy code
+Linked List:
+5 -> 10 -> 20 -> 30 -> None
+Search 20: True
+Search 99: False
+After deleting 20:
+5 -> 10 -> 30 -> None
+Do you want me to also show you the C implementation of linked list, or do you prefer just Python?
+
+
+
+
+
+
+
+You said:
+code to make tic tak toe
+
+
+ChatGPT said:
+Perfect 👍
+I’ll write you a simple Tic-Tac-Toe game in Python that works in the terminal.
+
+It will include:
+
+A 3×3 board
+
+Two players (X and O)
+
+Checking for win/draw
+
+Alternating turns
+
+Here’s the code:
+
+python
+Copy code
+# Tic Tac Toe game in Python
+
+# Function to print the board
+def print_board(board):
+    for row in board:
+        print(" | ".join(row))
+        print("-" * 5)
+
+# Function to check for a win
+def check_winner(board, player):
+    # Check rows
+    for row in board:
+        if all([cell == player for cell in row]):
+            return True
+    
+    # Check columns
+    for col in range(3):
+        if all([board[row][col] == player for row in range(3)]):
+            return True
+    
+    # Check diagonals
+    if all([board[i][i] == player for i in range(3)]) or \
+       all([board[i][2 - i] == player for i in range(3)]):
+        return True
+    
+    return False
+
+# Function to check if board is full (draw)
+def is_full(board):
+    return all([cell != " " for row in board for cell in row])
+
+# Main game loop
+def play_game():
+    board = [[" " for _ in range(3)] for _ in range(3)]
+    current_player = "X"
+    
+    while True:
+        print_board(board)
+        print(f"Player {current_player}'s turn")
+
+        try:
+            row = int(input("Enter row (0-2): "))
+            col = int(input("Enter column (0-2): "))
+        except ValueError:
+            print("Invalid input! Please enter numbers 0-2.")
+            continue
+
+        # Check valid move
+        if row not in range(3) or col not in range(3) or board[row][col] != " ":
+            print("Invalid move, try again.")
+            continue
+
+        # Make move
+        board[row][col] = current_player
+
+        # Check win
+        if check_winner(board, current_player):
+            print_board(board)
+            print(f"🎉 Player {current_player} wins!")
+            break
+
+        # Check draw
+        if is_full(board):
+            print_board(board)
+            print("It's a draw!")
+            break
+
+        # Switch player
+        current_player = "O" if current_player == "X" else "X"
+
+# Run the game
+if __name__ == "__main__":
+    play_game()
