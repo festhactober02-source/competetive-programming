@@ -1,11 +1,4 @@
-# Node class
-class Node:
-    def __init__(self, data):
-        self.data = data   # store data
-        self.next = None   # pointer to next node
 
-
-# Linked List class
 class LinkedList:
     def __init__(self):
         self.head = None
