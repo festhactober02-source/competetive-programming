@@ -42,6 +42,8 @@ class LinkedList:
 
         if temp is None:  # Key not found
             return
+sert at the end
+    def insert_at_end(self, data):
 
         prev.next = temp.next
         temp = None
