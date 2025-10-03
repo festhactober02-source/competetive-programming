@@ -4,6 +4,21 @@ class LinkedList:
         self.head =         self.data = data   # store data
         self.data = data   # store data
 
+ # Insert at the beginning
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+ # Insert at the beginning
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+ # Insert at the beginning
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
     # Insert at the beginning
     def insert_at_beginning(self, data):
