@@ -10,7 +10,23 @@ class LinkedList:
  # Insert at the beginning
     def insert_at_beginning(self, data):
         new_node = Node(data)
-        new_node.next = self.head
+        new_node.next =elf.data = data   # store data
+        self.next = None   # pointer to next node
+
+def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+# Linked List classghhvghnvv
+class LinkedList:elf.data = data   # store data
+        self.next = None   # pointer to next node
+
+def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+# Linked List classghhvghnvv
+class LinkedList: self.head
         self.head = new_node    self.head = new_node
  # Insert at the beginn
 Insert at the beginning
